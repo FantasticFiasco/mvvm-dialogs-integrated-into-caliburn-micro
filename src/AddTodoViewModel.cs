@@ -1,12 +1,11 @@
-﻿using Caliburn.Micro;
-using MvvmDialogs;
+﻿using System.Threading.Tasks;
+using Caliburn.Micro;
 
 namespace Todos
 {
-    public class AddTodoViewModel : Screen, IModalDialogViewModel
+    public class AddTodoViewModel : Screen
     {
         private string name;
-        private bool? dialogResult;
 
         public string Name
         {
@@ -15,24 +14,15 @@ namespace Todos
             {
                 name = value;
                 NotifyOfPropertyChange(() => Name);
+                NotifyOfPropertyChange(() => CanOk);
             }
         }
 
-        public bool? DialogResult
-        {
-            get => dialogResult;
-            private set
-            {
-                dialogResult = value;
-                NotifyOfPropertyChange(() => DialogResult);
-            }
-        }
-
-        public void Ok()
+        public async Task Ok()
         {
             if (!string.IsNullOrEmpty(Name))
             {
-                DialogResult = true;
+                await TryCloseAsync(true);
             }
         }
 

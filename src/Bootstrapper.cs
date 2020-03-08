@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Windows;
 using Caliburn.Micro;
+using MvvmDialogs;
+using Todos.MvvmDialogs;
 
 namespace Todos
 {
@@ -19,6 +21,7 @@ namespace Todos
             container = new SimpleContainer();
 
             container.Singleton<IWindowManager, WindowManager>();
+            container.RegisterInstance(typeof(IDialogService), null, new DialogService(dialogTypeLocator: new DialogTypeLocator()));
 
             container.PerRequest<MainViewModel>();
         }
