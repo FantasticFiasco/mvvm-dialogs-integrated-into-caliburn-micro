@@ -6,14 +6,14 @@
     WindowStartupLocation="CenterOwner"
     SizeToContent="WidthAndHeight"
     ResizeMode="NoResize"
-    FocusManager.FocusedElement="{Binding ElementName=Name}">
+    FocusManager.FocusedElement="{Binding ElementName=NameInput}">
 
     <Window.Resources>
         <ResourceDictionary Source="ApplicationResources.xaml" />
     </Window.Resources>
 
     <StackPanel>
-        <TextBox x:Name="Name" />
+        <TextBox x:Name="NameInput" />
 
         <StackPanel
             Orientation="Horizontal"
