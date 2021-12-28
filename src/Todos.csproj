@@ -9,7 +9,7 @@
 
   <ItemGroup>
     <PackageReference Include="Caliburn.Micro" Version="4.0.173" />
-    <PackageReference Include="MvvmDialogs" Version="7.0.0" />
+    <PackageReference Include="MvvmDialogs" Version="8.0.0" />
   </ItemGroup>
 
 </Project>
