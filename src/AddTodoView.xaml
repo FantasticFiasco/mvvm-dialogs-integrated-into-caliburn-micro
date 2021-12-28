@@ -13,7 +13,9 @@
     </Window.Resources>
 
     <StackPanel>
-        <TextBox x:Name="NameInput" />
+        <TextBox
+            x:Name="NameInput"
+            Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" />
 
         <StackPanel
             Orientation="Horizontal"
